@@ -4,10 +4,12 @@ LABEL org.thenuclei.creator="Brian Provenzano" \
       org.thenuclei.email="bproven@example.com"
 USER root
 RUN echo "deb http://deb.debian.org/debian testing main" >> /etc/apt/sources.list
-RUN apt-get update && apt-get install -y \
+RUN apt-add-repository ppa:ansible/ansible -y && apt-get update && apt-get install -y \
+software-properties-common \
 python3.6 \
 python3-pip \
 golang \
+ansible \
 && rm -fr /var/lib/apt/lists/*
 RUN sed -i '$ d' /etc/apt/sources.list
 RUN pip3 install requests flask pytest pytest-runner
