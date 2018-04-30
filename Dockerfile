@@ -4,8 +4,9 @@ LABEL org.thenuclei.creator="Brian Provenzano" \
       org.thenuclei.email="bproven@example.com"
 USER root
 RUN echo "deb http://deb.debian.org/debian testing main" >> /etc/apt/sources.list
-RUN apt-add-repository ppa:ansible/ansible -y && apt-get update && apt-get install -y \
-software-properties-common \
+RUN echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu trusty main" >> /etc/apt/sources.list
+RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 93C4A3FD7BB9C367
+RUN apt-get update && apt-get install -y \
 python3.6 \
 python3-pip \
 golang \
