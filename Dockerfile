@@ -11,6 +11,7 @@ python3.6 \
 python3-pip \
 golang \
 ansible \
+jq \
 && rm -fr /var/lib/apt/lists/*
 RUN sed -i '$ d' /etc/apt/sources.list
 RUN pip3 install requests flask pytest pytest-runner
