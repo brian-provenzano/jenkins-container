@@ -1,6 +1,7 @@
-# Docker container for jenkins (Ubuntu 16.04LTS Linux version)
+# Custom Docker Container For Jenkins
+Custom Docker image that utilizes jenkins/jenkins:lts as the base image 
 
-#### Setup a jenkins server with hashicorp tools, python, golang etc
+## Details
+Contains a custom docker image for jenkins with default plugins preconfigured, hardened instance configuration and a default admin user with matrix security setup.  Also includes env for python, golang, hashicorp IaaC tooling (terraform, packer)
 
-#### Details
-Contains docker image for jenkins with default plugins, hardened instance and a default admin user with matrix security setup.  Use jenkins lts base image (ubuntu)
+ - Utilizes my custom Python hashicorp-get utility located [here](https://github.com/brian-provenzano/hashicorp-get)
