@@ -14,10 +14,8 @@ ansible \
 jq \
 && rm -fr /var/lib/apt/lists/*
 RUN sed -i '$ d' /etc/apt/sources.list
-RUN pip3 install awscli
-#put this in the builds themselves as --user (not needed globally  newbie ;)
-#RUN pip3 install requests flask pytest pytest-runner awscli
-# ENV PATH="$PATH:/root/.local/bin"
+RUN pip3 install requests flask pytest pytest-runner awscli
+ENV PATH="$PATH:/root/.local/bin"
 # RUN echo $PATH
 # RUN echo $PYTHON_BIN_PATH
 RUN echo "America/Los_Angeles" | tee /etc/timezone
